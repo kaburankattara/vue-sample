@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VueSampleApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VueSampleApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

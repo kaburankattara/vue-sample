@@ -40,23 +40,21 @@ var app3 = new Vue({
 
 <!-- spanの表示・非表示を条件分岐で切り替える -->
 <div id="app-3">
-  <span v-if="seen">Now you see me</span>
-  <input id="app-3-btn" type="button" value="表示切り替え"/>
+  <span v-if="seen">Now you see me</span><br/>
+  <input v-on:click="changeDisplay" type="button" value="表示切り替え"/>
 </div>
 <script>
 var app3 = new Vue({
   el: '#app-3',
   data: {
     seen: true
+  },
+  methods: {
+    changeDisplay: function () {
+      this.seen = !this.seen;
+    }
   }
 })
-
-// ボタン要素を取得し、
-// クリックされた際のイベントリスナーを追加
-var app3btn = document.getElementById("app-3-btn");
-app3btn.addEventListener("click", function() {
-    app3.seen = !app3.seen;
-});
 </script>
 
 <!-- リストを表示する -->
@@ -77,6 +75,26 @@ var app4 = new Vue({
       { text: 'Learn Vue' },
       { text: 'Build something awesome' }
     ]
+  }
+})
+</script>
+
+<!-- クリックイベントの実行 -->
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<script>
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+    this.message = this.message.split('').reverse().join('')
+    }
   }
 })
 </script>

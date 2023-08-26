@@ -55,11 +55,31 @@ var app3 = new Vue({
 // クリックされた際のイベントリスナーを追加
 var app3btn = document.getElementById("app-3-btn");
 app3btn.addEventListener("click", function() {
-    app3.seen = false;
+    app3.seen = !app3.seen;
 });
 </script>
 
+<!-- リストを表示する -->
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
 
+<script>
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+</script>
 
 </body>
 </html>

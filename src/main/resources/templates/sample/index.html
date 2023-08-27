@@ -167,5 +167,44 @@ var app7 = new Vue({
 })
 </script>
 
+<!-- リアクティブの検証 -->
+<div id="app-8-1">
+  <p>messageプロパティがない場合</p>
+  <p>{{ message }}</p>
+  <input v-model="message"><br/>
+  <button v-on:click="addMessage">Add Message</button>
+</div>
+<div id="app-8-2">
+  <p>messageプロパティがある場合</p>
+  <p>{{ message }}</p>
+  <input v-model="message"><br/>
+  <button v-on:click="addMessage">Add Message</button>
+</div>
+
+<script>
+var app81 = new Vue({
+  el: '#app-8-1',
+  data: {
+  },
+  methods: {
+    addMessage: function () {
+      this.message = "反応します！";
+    }
+  }
+})
+var app82 = new Vue({
+  el: '#app-8-2',
+  data: {
+    message: ''
+  },
+  methods: {
+    addMessage: function () {
+      this.message = "反応します！";
+    }
+  }
+})
+</script>
+
+
 </body>
 </html>
